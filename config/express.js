@@ -24,14 +24,16 @@ var express    = require('express'),
 module.exports = function (app) {
 
   // Configure Express
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true, limit: '1mb' }));
+  app.use(bodyParser.json({ limit: '1mb' }));
+  app.use(express.static(__dirname + '/../public'));
 
   // Setup static public directory
-  app.use(express.static(__dirname + '/../public'));
-  app.set('view engine', 'jade');
-  app.set('views', __dirname + '/../views');
+  app.set('view engine', 'ejs');
+  app.enable('trust proxy');
 
+  if (process.env.SECURE_EXPRESS)
+    require('./security')(app);
   // Add error handling in dev
   if (!process.env.VCAP_SERVICES) {
     app.use(errorhandler());

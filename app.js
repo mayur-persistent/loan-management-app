@@ -46,9 +46,15 @@ var config = extend({
 
 var authService = watson.authorization(config);
 
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 // render index page
 app.get('/', function(req, res) {
-  res.render('index');
+  res.render('index', { ct: req._csrfToken });
 });
 
 app.post('/tone', function(req, res, next) {
