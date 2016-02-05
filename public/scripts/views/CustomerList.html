@@ -1,0 +1,45 @@
+<!-- START WIDGETS -->                    
+                    <div class="row">
+                     <!-- START DEFAULT DATATABLE -->
+                            <!-- START DEFAULT DATATABLE -->
+                            <div class="panel panel-default">
+                                <div class="panel-heading">                                
+                                    <h3 class="panel-title">Default</h3>
+                                    <ul class="panel-controls">
+                                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                    </ul>                                
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Profession</th>
+                                                <th>Credit Score</th>
+                                                <th>City</th>
+                                                <th>Existing Loan To Income Ratio</th>
+                                                <th>Monthly Income</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="customer in customerList">
+                                                <td>{{customer.CustomerName}}</td>
+                                                <td>{{customer.Profession}}</td>
+                                                <td>{{customer.Creditscore}}</td>
+                                                <td>{{customer.City}}</td>
+                                                <td>{{customer.Existingloans-to-income-ratio}}</td>
+                                                <td>{{customer.Monthly-Income}}</td>
+                                                <td><button type="button" class="btn btn-primary mb-control" ng-click="loadProfile(customer.CIFNumber)" data-box="#message-box-success"><span class="fa fa-eye"></span> Analyse </button> </td>
+                                            </tr>
+                                 
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END DEFAULT DATATABLE -->
+                              </div>
+                              
+ 

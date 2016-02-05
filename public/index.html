@@ -12,7 +12,12 @@
         
         <!-- CSS INCLUDE -->        
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
+        <link rel="stylesheet" type="text/css" href="css/c3/c3.css" media="screen">
         <!-- EOF CSS INCLUDE -->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load("current", {packages:["corechart"]});
+        </script>
     </head>
     <body >
         <!-- START PAGE CONTAINER -->
@@ -30,9 +35,18 @@
 					
                     <li>
                         <a href="#/"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>
-                    </li>        
+                    </li> 
 					<li>
-						<a href="#/complaints"><span class="fa fa-envelope"></span> <span class="xn-text">Customer Complaints</span></a>
+						<a href="#/customerList"><span class="fa fa-user"></span> <span class="xn-text">User Analysis</span></a>
+					</li>
+					<li>
+						<a href="#/productList"><span class="fa fa-bank"></span> <span class="xn-text">Product Analysis</span></a>
+					</li>						
+					<li>
+						<a href="#/csList"><span class="fa fa-users"></span> <span class="xn-text">CS Analysis</span></a>
+					</li>
+					<li>
+						<a href="#/complaints"><span class="fa fa-envelope"></span> <span class="xn-text">User Complaints</span></a>
 					</li>					
                 </ul>
                 <!-- END X-NAVIGATION -->
@@ -127,10 +141,15 @@
 		<!-- START ANGULAR pLUGINS  -->
 		<script src="scripts/lib/angular.min.js"></script>
 		<script src="scripts/lib/angular-route.js"></script>
+		<script src="scripts/lib/Chart.min.js"></script>
+		<script src="scripts/lib/angular-chart.js"></script>
 		<script src="scripts/app.js"></script>
 		
+		 <script type="text/javascript" src="js/plugins/datatables/jquery.dataTables.min.js"></script>  
+		 
 		<!-- END ANGULAR pLUGINS  -->
         <!-- START TEMPLATE -->
+		
         <script type="text/javascript" src="js/plugins.js"></script>        
         <script type="text/javascript" src="js/actions.js"></script>        
         <!-- END TEMPLATE -->
@@ -138,7 +157,17 @@
         
         <!-- START CONTROLLERS -->
         <script src="scripts/controller/DashboardController.js"></script>
+        <script src="scripts/controller/ProductController.js"></script>
+        <script src="scripts/controller/CsController.js"></script>
+        <script src="scripts/controller/CustomerController.js"></script>
         <!-- END CONTROLLERS -->
+		<!-- START SERVICES -->
+		<script src="scripts/services/Configuration.js"></script>
+		<script src="scripts/services/Services.js"></script>
+		<script src="scripts/services/RestServiceProxy.js"></script>
+		<script src="scripts/services/customer/CustomerRestService.js"></script>
+		<script src="scripts/services/tone/ToneRestService.js"></script>
+		<!-- END SERVICES -->
     <!-- END SCRIPTS -->         
     </body>
 </html>

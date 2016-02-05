@@ -21,3 +21,10 @@ app.factory('productService', function (configService, restServiceProxy, $http) 
         return new ProductRestService(configService, restServiceProxy , $http);
     }
 });
+app.factory('toneAnalyserService', function (configService, restServiceProxy, $http) {
+    if (configService.ENV === "LOCAL") {
+        return new ToneRestService();
+    } else {
+        return new ToneRestService(configService, restServiceProxy , $http);
+    }
+});

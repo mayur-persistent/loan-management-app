@@ -82,67 +82,45 @@
                     <!-- END WIDGETS -->   
 					
 					 <div class="row">
-                        <div class="col-md-5">
-
-                            <!-- START DEFAULT DATATABLE -->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">                                
-                                    <h3 class="panel-title">Default</h3>
-                                    <ul class="panel-controls">
-                                        <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
-                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
-                                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
-                                    </ul>                                
+                        <div class="col-md-6">
+                        	
+							<!-- START PRIMARY PANEL -->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Stats By Loans Taken</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <table class="table datatable">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>63</td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ashton Cox</td>
-                                                <td>Junior Technical Author</td>
-                                                <td>San Francisco</td>
-                                                <td>66</td>
-                                                <td>2009/01/12</td>
-                                                <td>$86,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012/03/29</td>
-                                                <td>$433,060</td>
-                                            </tr>
-                                           
-                                            
-                                        </tbody>
-                                    </table>
+                                <canvas id="base" class="chart-base" chart-type="type"
+							  chart-data="data" chart-labels="labels" chart-legend="false" chart-click="onClick">
+							</canvas> 
+							 
                                 </div>
+                                <div class="panel-footer">
+                                    * count of users by Loans taken
+                                   
+                                </div>                            
                             </div>
-                            <!-- END DEFAULT DATATABLE -->
+                            <!-- END PRIMARY PANEL -->
+                            </div>
+                            
+                             <div class="col-md-6">
+                        	
+							<!-- START PRIMARY PANEL 2-->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Stats By Credit Score </h3>
+                                </div>
+                                <div class="panel-body">
+                                <canvas id="doughnut" class="chart chart-doughnut"
+								  chart-data="dataScores" chart-labels="labelsScores" chart-click="onClick">
+								</canvas> 
+								(> 750 : Excellent , 700-749 : Good , 650-699 : Fair , 600-649 : Poor , < 600 : Bad)
+                                </div>
+                                <div class="panel-footer">
+                                    * count of users by Credit Score
+                                   
+                                </div>                            
+                            </div>
+                            <!-- END PRIMARY PANEL 3 -->
+                            </div>
+                            </div>

@@ -1,8 +1,7 @@
 var Configuration = function () {
     var location = window.location;
     this.ENV = 'FORBIDDEN';
-    this.siteUrl = 'http://10.77.5.57:8080/WealthMangement';
-    //this.siteUrl = 'http://fssfoak.sl.cloud9.ibm.com:8080/WealthMangement';
+    this.siteUrl = 'https://loan-management-app-bluemix-demo.mybluemix.net';
     
     this.modelConfig = {
     	'model1' : {
