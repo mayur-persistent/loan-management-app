@@ -18,9 +18,8 @@
     "watson-developer-cloud": "^1.1.2"
   },
   "repository": {
-    "name": "my-application",
-    "version": "0.0.1",
-    "private": true
+    "type": "git",
+    "url": "https://github.com/watson-developer-cloud/speech-to-text-nodejs.git"
   },
   "browserify-shim": {
     "jquery": "global:jQuery"
