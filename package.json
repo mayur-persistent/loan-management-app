@@ -14,7 +14,21 @@
     "express-secure-only": "^0.2.1",
     "helmet": "^1.0.1",
     "vcap_services": "^0.1.7",
+    "request": "~2.67.0",
     "watson-developer-cloud": "^1.1.2"
+  },
+  "repository": {
+    "name": "my-application",
+    "version": "0.0.1",
+    "private": true
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
   },
   "scripts": {
     "start": "node app.js",

@@ -23,6 +23,15 @@ var express = require('express'),
   extend    = require('util')._extend,
   watson    = require('watson-developer-cloud');
 
+var tradeoffAnalyticsCredentials = extend({
+  version: 'v1',
+  url: '<url>',
+  username: '<username>',
+  password: '<password>'
+}, bluemix.getServiceCreds('tradeoff_analytics')); // VCAP_SERVICES
+
+// Create the service wrapper
+var tradeoffAnalytics = watson.tradeoff_analytics(tradeoffAnalyticsCredentials);
 // Bootstrap application settings
 require('./config/express')(app);
 
@@ -45,10 +54,14 @@ var config = extend({
 }, vcapServices.getCredentials('speech_to_text'));
 
 var authService = watson.authorization(config);
-
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 // render index page
 app.get('/', function(req, res) {
-  res.render('index');
+  res.render('index', { ct: req._csrfToken });
 });
 
 app.post('/tone', function(req, res, next) {
@@ -72,7 +85,7 @@ app.get('/synonyms', function(req, res, next) {
 
 
 // Get token using your credentials
-app.post('/api/token', function(req, res, next) {
+app.get('/api/token', function(req, res, next) {
   authService.getToken({url: config.url}, function(err, token) {
     if (err)
       next(err);
@@ -80,7 +93,37 @@ app.post('/api/token', function(req, res, next) {
       res.send(token);
   });
 });
+app.post('/demo/dilemmas/', function(req, res) {
+  var params = extend(req.body);
+  params.metadata_header = getMetadata(req);
+  
+  tradeoffAnalytics.dilemmas(params, function(err, dilemma) {
+    if (err) 
+      return res.status(Number(err.code) || 502).send(err.error || err.message || 'Error processing the request');
+    else
+      return res.json(dilemma);
+  });
+});
 
+app.post('/demo/events/', function(req, res) {
+  var params = extend(req.body);
+  params.metadata_header = getMetadata(req);
+  
+  tradeoffAnalytics.events(params, function(err) {
+    if (err)
+      return res.status(Number(err.code) || 502).send(err.error || err.message || 'Error forwarding events');
+    else
+      return res.send();
+  });
+});
+
+function getMetadata(req) {
+	var metadata = req.header('x-watson-metadata');
+	if (metadata) {
+		metadata += "client-ip:" + req.ip;
+	}
+	return metadata;
+}
 // error-handler settings
 require('./config/error-handler')(app);
 

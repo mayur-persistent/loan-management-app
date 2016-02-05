@@ -6,13 +6,18 @@ declared-services:
   speech_to_text_service_app:
     label: speech_to_text
     plan: standard
+  tradeoff_analytics_service_app:
+    label: tradeoff_analytics
+    plan: standard
 applications:
 - services:
   - tone_analyzer_service_app
   - speech_to_text_service_app
-  name: loan_management_app_bluemix_demo
+  - tradeoff_analytics_service_app
+  name: lma_bluemix_demo
   command: node app.js
   path: .
   memory: 512MB
   env:
     NODE_ENV: production
+    SECURE_EXPRESS: 1
