@@ -54,8 +54,6 @@ var config = extend({
 }, vcapServices.getCredentials('speech_to_text'));
 
 var authService = watson.authorization(config);
-
-
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

@@ -29,7 +29,7 @@ module.exports = function (app) {
   app.use(express.static(__dirname + '/../public'));
 
   // Setup static public directory
-  app.set('view engine', 'ejs');
+  //app.set('view engine', 'ejs');
   app.enable('trust proxy');
 
   if (process.env.SECURE_EXPRESS)

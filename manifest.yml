@@ -14,7 +14,7 @@ applications:
   - tone_analyzer_service_app
   - speech_to_text_service_app
   - tradeoff_analytics_service_app
-  name: lma_bluemix_demo
+  name: providentia
   command: node app.js
   path: .
   memory: 512MB
