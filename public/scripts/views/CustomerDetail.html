@@ -3,15 +3,25 @@
                             
              <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <h3 class="push-down-0">Emails</h3>
+                                    <h3 class="push-down-0">Emails <button type="button" class="btn btn-success mb-control right btn-rounded"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData()"><span class="fa fa-eye"></span>Analyse All</button></h3>
                                 </div>
                                 <div class="panel-body faq" >
                                     
                                     <div class="faq-item" ng-repeat="email in emails">
-                                        <div class="faq-title" ng-click="toggle($event)"><span class="fa fa-angle-down"></span>{{email.subject}}</div>
+                                        <div class="faq-title" ng-click="toggle($event)"><span class="fa fa-angle-down text-success"></span>{{email.subject}}
+                                        	
+                                        	<i  ng-show="email.additional" class="glyphicon glyphicon-ok"></i>
+                                        	</div>
                                         <div class="faq-text">                                        	
                                             {{email.text}}     
-                                            <br />                                            
+                                            <br /> 
+                                            <div id="response_{{$index}}">
+                                            <p ng-show="email.additional"><span class="badge">65</span> Agreeableness   
+                                        , <span class="badge badge-danger">2</span>  Anger
+                                        , <span class="badge badge-success">113</span>  Openness   
+                                        , <span class="badge badge-info">8</span>  Analytical </p>
+                                        
+                                        	</div>                                           
                                             <button type="button" class="btn btn-primary mb-control"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData()"><span class="fa fa-eye"></span>Analyse</button>
                                         </div>
                                        
@@ -23,7 +33,7 @@
                             
              <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <h3 class="push-down-0">Recordings</h3>
+                                    <h3 class="push-down-0">Recordings <button type="button" class="btn btn-success mb-control right btn-rounded"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData()"><span class="fa fa-eye"></span>Analyse All</button></h3></h3>
                                 </div>
                                 <div class="panel-body faq" >
                                     

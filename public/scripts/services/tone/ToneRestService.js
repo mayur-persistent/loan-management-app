@@ -12,7 +12,7 @@ var ToneRestService = function(configService, restServiceProxy ) {
 
 ToneRestService.prototype = {    
 	getToneAnalysedData : function(data, onSuccess ,onError) {
-	   var url = this.customerByPath;
+	   var url = this.toneAnalyserUrl;
 	   var url = 'http://localhost:8080/loan-management-app/public/data/toneAnalysis.json';
         return this.restServiceProxy.post(url,{ 
         	data: data,
