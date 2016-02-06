@@ -1,0 +1,282 @@
+[{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.15
+            ]
+          ],
+          "transcript": "I "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.08
+            ],
+            [
+              "will",
+              0.08,
+              0.29
+            ],
+            [
+              "now",
+              0.29,
+              0.41
+            ]
+          ],
+          "transcript": "I will now "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.08
+            ],
+            [
+              "will",
+              0.08,
+              0.29
+            ],
+            [
+              "not",
+              0.29,
+              0.67
+            ]
+          ],
+          "transcript": "I will not "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.08
+            ],
+            [
+              "will",
+              0.08,
+              0.29
+            ],
+            [
+              "not",
+              0.29,
+              0.64
+            ],
+            [
+              "make",
+              0.64,
+              0.87
+            ],
+            [
+              "the",
+              0.87,
+              0.93
+            ]
+          ],
+          "transcript": "I will not make the "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.08
+            ],
+            [
+              "will",
+              0.08,
+              0.29
+            ],
+            [
+              "not",
+              0.29,
+              0.64
+            ],
+            [
+              "make",
+              0.64,
+              0.88
+            ],
+            [
+              "the",
+              0.88,
+              0.97
+            ],
+            [
+              "pain",
+              0.97,
+              1.19
+            ]
+          ],
+          "transcript": "I will not make the pain "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.08
+            ],
+            [
+              "will",
+              0.08,
+              0.29
+            ],
+            [
+              "not",
+              0.29,
+              0.64
+            ],
+            [
+              "make",
+              0.64,
+              0.88
+            ],
+            [
+              "the",
+              0.88,
+              0.97
+            ],
+            [
+              "payment",
+              0.97,
+              1.4
+            ]
+          ],
+          "transcript": "I will not make the payment "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "word_confidence": [
+            [
+              "I",
+              1
+            ],
+            [
+              "will",
+              1
+            ],
+            [
+              "not",
+              1
+            ],
+            [
+              "make",
+              1
+            ],
+            [
+              "the",
+              1
+            ],
+            [
+              "payment",
+              0.9927506220974
+            ]
+          ],
+          "confidence": 0.998,
+          "transcript": "I will not make the payment ",
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.08
+            ],
+            [
+              "will",
+              0.08,
+              0.29
+            ],
+            [
+              "not",
+              0.29,
+              0.64
+            ],
+            [
+              "make",
+              0.64,
+              0.88
+            ],
+            [
+              "the",
+              0.88,
+              0.97
+            ],
+            [
+              "payment",
+              0.97,
+              1.45
+            ]
+          ]
+        }
+      ],
+      "final": true
+    }
+  ],
+  "result_index": 0
+}]

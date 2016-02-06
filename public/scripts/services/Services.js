@@ -28,3 +28,28 @@ app.factory('toneAnalyserService', function (configService, restServiceProxy, $h
         return new ToneRestService(configService, restServiceProxy , $http);
     }
 });
+
+app.factory('UILoader', function() {
+	
+   function UILoader(dom) {
+        this.domElement = null;
+        this.loader = null;
+        this.domElement = dom;
+        this.loader = angular.element('<div class="overlay"><i class="fa fa-refresh fa-spin"></i></div>');
+        (this.domElement).append(this.loader);
+        (this.loader).hide();
+    }
+
+    UILoader.prototype = {
+        show: function() {
+            this.loader.show();
+        },
+        hide: function() {
+            this.loader.hide();
+        },
+        destroy: function() {
+
+        }
+    }
+    return UILoader;
+})

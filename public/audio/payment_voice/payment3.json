@@ -1,0 +1,315 @@
+[{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.15
+            ]
+          ],
+          "transcript": "I "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.14
+            ],
+            [
+              "can't",
+              0.14,
+              0.41
+            ]
+          ],
+          "transcript": "I can't "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.14
+            ],
+            [
+              "can't",
+              0.14,
+              0.5
+            ],
+            [
+              "make",
+              0.5,
+              0.67
+            ]
+          ],
+          "transcript": "I can't make "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.14
+            ],
+            [
+              "can't",
+              0.14,
+              0.5
+            ],
+            [
+              "make",
+              0.5,
+              0.77
+            ],
+            [
+              "the",
+              0.77,
+              0.89
+            ]
+          ],
+          "transcript": "I can't make the "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.14
+            ],
+            [
+              "can't",
+              0.14,
+              0.5
+            ],
+            [
+              "make",
+              0.5,
+              0.77
+            ],
+            [
+              "the",
+              0.77,
+              0.87
+            ],
+            [
+              "pain",
+              0.87,
+              1.12
+            ]
+          ],
+          "transcript": "I can't make the pain "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.14
+            ],
+            [
+              "can't",
+              0.14,
+              0.5
+            ],
+            [
+              "make",
+              0.5,
+              0.77
+            ],
+            [
+              "the",
+              0.77,
+              0.87
+            ],
+            [
+              "payment",
+              0.87,
+              1.28
+            ],
+            [
+              "now",
+              1.28,
+              1.43
+            ]
+          ],
+          "transcript": "I can't make the payment now "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.14
+            ],
+            [
+              "can't",
+              0.14,
+              0.5
+            ],
+            [
+              "make",
+              0.5,
+              0.77
+            ],
+            [
+              "the",
+              0.77,
+              0.87
+            ],
+            [
+              "payment",
+              0.87,
+              1.28
+            ],
+            [
+              "now",
+              1.28,
+              1.62
+            ]
+          ],
+          "transcript": "I can't make the payment now "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "word_confidence": [
+            [
+              "I",
+              1
+            ],
+            [
+              "can't",
+              1
+            ],
+            [
+              "make",
+              1
+            ],
+            [
+              "the",
+              1
+            ],
+            [
+              "payment",
+              0.8946215762255997
+            ],
+            [
+              "now",
+              0.9923087943553268
+            ]
+          ],
+          "confidence": 0.971,
+          "transcript": "I can't make the payment now ",
+          "timestamps": [
+            [
+              "I",
+              0.03,
+              0.14
+            ],
+            [
+              "can't",
+              0.14,
+              0.5
+            ],
+            [
+              "make",
+              0.5,
+              0.77
+            ],
+            [
+              "the",
+              0.77,
+              0.87
+            ],
+            [
+              "payment",
+              0.87,
+              1.28
+            ],
+            [
+              "now",
+              1.28,
+              1.62
+            ]
+          ]
+        },
+        {
+          "transcript": "I can't make the payments now "
+        }
+      ],
+      "final": true
+    }
+  ],
+  "result_index": 0
+}]

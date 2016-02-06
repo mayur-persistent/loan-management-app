@@ -1,56 +1,49 @@
   <div class="row">
-  	  <div class="col-md-6">
-                            
+  	  <div class="col-md-6">            
              <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <h3 class="push-down-0">Emails <button type="button" class="btn btn-success mb-control right btn-rounded"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData()"><span class="fa fa-eye"></span>Analyse All</button></h3>
-                                </div>
-                                <div class="panel-body faq" >
-                                    
-                                    <div class="faq-item" ng-repeat="email in emails">
-                                        <div class="faq-title" ng-click="toggle($event)"><span class="fa fa-angle-down text-success"></span>{{email.subject}}
-                                        	
-                                        	<i  ng-show="email.additional" class="glyphicon glyphicon-ok"></i>
-                                        	</div>
-                                        <div class="faq-text">                                        	
-                                            {{email.text}}     
-                                            <br /> 
-                                            <div id="response_{{$index}}">
-                                            <p ng-show="email.additional"><span class="badge">65</span> Agreeableness   
-                                        , <span class="badge badge-danger">2</span>  Anger
-                                        , <span class="badge badge-success">113</span>  Openness   
-                                        , <span class="badge badge-info">8</span>  Analytical </p>
-                                        
-                                        	</div>                                           
-                                            <button type="button" class="btn btn-primary mb-control"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData()"><span class="fa fa-eye"></span>Analyse</button>
-                                        </div>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="col-md-6">
-                            
+                 <div class="panel-body">
+                     <h3 class="push-down-0">Emails <button type="button" class="btn btn-success mb-control right btn-rounded"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData()"><span class="fa fa-eye"></span>Analyse All</button></h3>
+                 </div>
+                 <div class="panel-body faq" >
+                     <div class="faq-item" ng-repeat="email in emails">
+                         <div class="faq-title" ng-click="toggle($event)"><span class="fa fa-angle-down text-success"></span>{{email.subject}}
+                         	<i  ng-show="email.additional" class="glyphicon glyphicon-ok"></i>
+                         	</div>
+                         <div class="faq-text">                                        	
+                             <div ng-bind-html="trustHtml(email.text)"></div>
+                             <br /> 
+                             <p ng-show="email.additional">
+                              	<span class="badge">{{email.additional.Agreeableness}}</span>&nbspAgreeableness&nbsp
+                           		<span class="badge badge-danger">{{email.additional.Anger}}</span>&nbspAnger&nbsp
+                           		<span class="badge badge-success">{{email.additional.Openness}}</span>&nbspOpenness&nbsp
+                          		<span class="badge badge-info">{{email.additional.Tentative}}</span>&nbspAnalytical&nbsp
+                          	 </p>
+                            <button type="button" class="btn btn-primary mb-control"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData(email.msgId)"><span class="fa fa-eye"></span>Analyse</button>
+                         </div>
+                     </div>
+                 </div>
+              </div>
+       </div>
+       <div class="col-md-6">
              <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <h3 class="push-down-0">Recordings <button type="button" class="btn btn-success mb-control right btn-rounded"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData()"><span class="fa fa-eye"></span>Analyse All</button></h3></h3>
-                                </div>
-                                <div class="panel-body faq" >
-                                    
-                                    <div class="faq-item" ng-repeat="call in calls">
-                                        <div class="faq-title" ng-click="toggle($event)"><span class="fa fa-angle-down"></span>{{call.title}}</div>
-                                        <div class="faq-text">                                        	
-                                            {{call.title}}     
-                                            <br />                                            
-                                            <button type="button" class="btn btn-primary mb-control"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData()"><span class="fa fa-eye"></span>Analyse</button>
-                                        </div>
-                                       
-                                    </div>
-                                </div>
-                            </div>
+                <div class="panel-body">
+                    <h3 class="push-down-0">Recordings <button type="button" class="btn btn-success mb-control right btn-rounded"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getRecordingAnalysedData()"><span class="fa fa-eye"></span>Analyse All</button></h3></h3>
+                </div>
+                <div class="panel-body faq" >
+                    <div class="faq-item" ng-repeat="call in calls">
+                        <div class="faq-title" ng-click="toggle($event)"><span class="fa fa-angle-down"></span>{{call.title}}</div>
+                        <div class="faq-text">                       	
+                            {{call.title}}
+                            <br />
+                            <br />
+                            <audio ng-src="{{call.filepath}}" controls></audio><br /> <br />
+                            <button type="button" class="btn btn-primary mb-control"  data-toggle="modal" data-target="#recordingAnalyseModal" data-box="#message-box-success" ng-click="getRecordingAnalysedData(call.fileJson)"><span class="fa fa-eye"></span>Analyse</button>
+                        </div>
                     </div>
+                </div>
+            </div>
+       </div>
 </div>
-           
 <div id="analyseModal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -59,11 +52,47 @@
                 <h4 class="modal-title">Analyse Data</h4>
             </div>
             <div class="modal-body">
+            
+            	<div class="row">
+            		<div class="col-md-9 col-lg-9 col-sm-9">
+            			 <div class="chart-holder" id="analysePieChart"></div>
+            		</div>
+            		<div class="col-md-3 col-lg-3 col-sm-3">
+		              <p>
+		               	<span class="badge badge-success" style="margin-bottom: 5px;">{{selectedEmail.additional.Agreeableness}}</span>&nbspAgreeableness&nbsp<br />
+		            	<span class="badge badge-info" style="margin-bottom: 5px;">{{selectedEmail.additional.Analytical}}</span>&nbspAnalytical&nbsp<br />
+		            	<span class="badge badge-danger" style="margin-bottom: 5px;">{{selectedEmail.additional.Anger}}</span>&nbspAnger&nbsp<br />
+		           		<span class="badge badge-warning" style="margin-bottom: 5px;">{{selectedEmail.additional.Cheerfulness}}</span>&nbspCheerfulness&nbsp<br />
+		           		<span class="badge badge-primary" style="margin-bottom: 5px;">{{selectedEmail.additional.Confident}}</span>&nbspConfident&nbsp<br />
+		            	<span class="badge badge-success" style="margin-bottom: 5px;">{{selectedEmail.additional.Conscientiousness}}</span>&nbspConscientiousness&nbsp<br />
+		            	<span class="badge badge-danger" style="margin-bottom: 5px;">{{selectedEmail.additional.Negative}}</span>&nbspNegative&nbsp<br />
+		           		<span class="badge badge-info" style="margin-bottom: 5px;">{{selectedEmail.additional.Openness}}</span>&nbspOpenness&nbsp<br />
+		           		<span class="badge badge-warning" style="margin-bottom: 5px;">{{selectedEmail.additional.Tentative}}</span>&nbspTentative&nbsp<br />
+		           	 </p>            		
+            		</div>
+            	</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="recordingAnalyseModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Analyse Recording</h4>
+            </div>
+            <div class="modal-body">
                 <div class="chart-holder" id="analysePieChart"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">OK</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
             </div>
         </div>
     </div>

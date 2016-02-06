@@ -1,4 +1,4 @@
-var app = angular.module('loansapp', ['ngRoute','chart.js']).config(function($routeProvider, $locationProvider) {
+var app = angular.module('loansapp', ['ngRoute','chart.js','ngSanitize']).config(function($routeProvider, $locationProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'scripts/views/Dashboard.html',

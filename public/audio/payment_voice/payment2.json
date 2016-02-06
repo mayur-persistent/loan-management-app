@@ -1,0 +1,397 @@
+[{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "so",
+              0.03,
+              0.15
+            ]
+          ],
+          "transcript": "so "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "sorry",
+              0.03,
+              0.41
+            ]
+          ],
+          "transcript": "sorry "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "sorry",
+              0.03,
+              0.48
+            ]
+          ],
+          "transcript": "sorry "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "sorry",
+              0.03,
+              0.48
+            ],
+            [
+              "well",
+              0.61,
+              0.83
+            ],
+            [
+              "how",
+              0.83,
+              0.93
+            ]
+          ],
+          "transcript": "sorry well how "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "sorry",
+              0.03,
+              0.48
+            ],
+            [
+              "will",
+              0.61,
+              0.83
+            ],
+            [
+              "have",
+              0.83,
+              1.05
+            ],
+            [
+              "to",
+              1.05,
+              1.19
+            ]
+          ],
+          "transcript": "sorry will have to "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "sorry",
+              0.03,
+              0.48
+            ],
+            [
+              "will",
+              0.61,
+              0.83
+            ],
+            [
+              "have",
+              0.83,
+              1.05
+            ],
+            [
+              "to",
+              1.05,
+              1.16
+            ],
+            [
+              "check",
+              1.16,
+              1.43
+            ]
+          ],
+          "transcript": "sorry will have to check "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "sorry",
+              0.03,
+              0.48
+            ],
+            [
+              "will",
+              0.61,
+              0.83
+            ],
+            [
+              "have",
+              0.83,
+              1.05
+            ],
+            [
+              "to",
+              1.05,
+              1.16
+            ],
+            [
+              "check",
+              1.16,
+              1.49
+            ],
+            [
+              "on",
+              1.49,
+              1.69
+            ]
+          ],
+          "transcript": "sorry will have to check on "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "sorry",
+              0.03,
+              0.48
+            ],
+            [
+              "will",
+              0.61,
+              0.83
+            ],
+            [
+              "have",
+              0.83,
+              1.05
+            ],
+            [
+              "to",
+              1.05,
+              1.16
+            ],
+            [
+              "check",
+              1.16,
+              1.49
+            ],
+            [
+              "on",
+              1.49,
+              1.67
+            ],
+            [
+              "that",
+              1.67,
+              1.95
+            ]
+          ],
+          "transcript": "sorry will have to check on that "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "timestamps": [
+            [
+              "sorry",
+              0.03,
+              0.48
+            ],
+            [
+              "will",
+              0.61,
+              0.83
+            ],
+            [
+              "have",
+              0.83,
+              1.05
+            ],
+            [
+              "to",
+              1.05,
+              1.16
+            ],
+            [
+              "check",
+              1.16,
+              1.49
+            ],
+            [
+              "on",
+              1.49,
+              1.67
+            ],
+            [
+              "that",
+              1.67,
+              1.98
+            ]
+          ],
+          "transcript": "sorry will have to check on that "
+        }
+      ],
+      "final": false
+    }
+  ],
+  "result_index": 0
+},
+{
+  "results": [
+    {
+      "alternatives": [
+        {
+          "word_confidence": [
+            [
+              "sorry",
+              0.9923999186783575
+            ],
+            [
+              "will",
+              0.5660352861675194
+            ],
+            [
+              "have",
+              1
+            ],
+            [
+              "to",
+              1
+            ],
+            [
+              "check",
+              1
+            ],
+            [
+              "on",
+              1
+            ],
+            [
+              "that",
+              0.9877668680719943
+            ]
+          ],
+          "confidence": 0.944,
+          "transcript": "sorry will have to check on that ",
+          "timestamps": [
+            [
+              "sorry",
+              0.03,
+              0.48
+            ],
+            [
+              "will",
+              0.61,
+              0.83
+            ],
+            [
+              "have",
+              0.83,
+              1.05
+            ],
+            [
+              "to",
+              1.05,
+              1.16
+            ],
+            [
+              "check",
+              1.16,
+              1.49
+            ],
+            [
+              "on",
+              1.49,
+              1.67
+            ],
+            [
+              "that",
+              1.67,
+              1.98
+            ]
+          ]
+        },
+        {
+          "transcript": "sorry we'll have to check on that "
+        },
+        {
+          "transcript": "sorry well have to check on that "
+        }
+      ],
+      "final": true
+    }
+  ],
+  "result_index": 0
+}]
