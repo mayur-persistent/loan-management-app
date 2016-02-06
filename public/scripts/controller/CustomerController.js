@@ -62,7 +62,7 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$http', '$sce', '
 	            });
 			}
 			console.log($scope.analysedData);
-			console.log(additionalArray);
+			console.log($scope.emails);
 	    },function (code, data) {
 			 $scope.showMessage('info',SERVER_FAILURE);
 			 uiLoader.hide();

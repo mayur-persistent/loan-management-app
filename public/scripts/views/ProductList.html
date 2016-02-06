@@ -9,18 +9,15 @@
                             <button class="btn btn-default content-frame-left-toggle"><span class="fa fa-bars"></span></button>
                         </div>                                
                         <div class="pull-right" style="width: 100px; margin-right: 5px;">
-                            <select class="form-control select">
-                                                         
+                            <select class="form-control select">        
                                 <option>Loan</option>
                                 <option>Mutual Funds</option>
                                 <option>Savings</option>
                                 <option>All</option>       
                             </select>
                         </div>
-                        
                     </div>                    
                     <div class="content-frame-left">
-                                
                         <div class="form-group push-up-10">
                             <h4>Search in Products:</h4>
                             <div class="input-group">
@@ -44,68 +41,75 @@
                     <!-- END CONTENT FRAME TOP -->
                     
                     <!-- START CONTENT FRAME BODY -->
-                    <div class="content-frame-body">
-                                                
+                    <div class="content-frame-body">     
                         <div class="row push-up-10">
-                            <div class="col-md-4">
-                                
-                                <h3>Emails</h3>
-                                
-                                <div class="panel-body list-group list-group-contacts">  
-                                	
-                                	<ul class="list-group border-bottom">
-                                        <li class="list-group-item">
-											<span class="contacts-title"><span class="fa fa-envelope text-success"></span>Email 1</span>
-                                        <br /><br />
-                                        <p><span class="badge">65</span> Agreeableness   
-                                        , <span class="badge badge-danger">2</span>  Anger
-                                        , <span class="badge badge-success">113</span>  Openness   
-                                        , <span class="badge badge-info">8</span>  Analytical </p>                                
-                                        <div class="list-group-controls">
-                                            <button class="btn btn-primary btn-rounded"><span class="fa fa-eye"></span></button>
-                                        </div>
-										</li>
-                                        <li class="list-group-item">
-										<span class="contacts-title"><span class="fa fa-envelope text-success"></span>Email 2</span>
-                                        <br /><br />
-                                        <p><span class="badge">10</span> Agreeableness   
-                                        , <span class="badge badge-danger">112</span>  Anger
-                                        , <span class="badge badge-success">5</span>  Openness   
-                                        , <span class="badge badge-info">0</span>  Analytical </p>                                
-                                        <div class="list-group-controls">
-                                            <button class="btn btn-primary btn-rounded"><span class="fa fa-eye"></span></button>
-                                        </div>  
-										</li>
-                                         </ul>                               
-                                                                                               
-                                                                
-                                </div>   
-                                                 
-
+                            <div class="col-md-4">          
+                               <h3>Emails</h3>
+	                            <div class="panel panel-success panel-hidden-controls" ng-repeat="mail in emails">
+	                                <div class="panel-heading">
+	                                    <h3 class="panel-title"><span class="fa fa-envelope text-success"></span>&nbsp;{{mail.subject}}</h3>
+	                                    <!-- <ul class="panel-controls">
+	                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+	                                    </ul> -->
+	                                </div>
+	                                <div class="panel-body">
+	                                	<table class='table table-condensed'>
+	                                		<tbody>
+	                                			<tr>
+	                                				<td><span class="badge badge-success">{{mail.additional.Agreeableness}}</span>&nbsp;Agreeableness</td>
+	                                				<td><span class="badge badge-info">{{mail.additional.Analytical}}</span>&nbsp;Analytical</td>
+	                                			</tr>
+	                                			<tr>
+	                                				<td><span class="badge badge-warning">{{mail.additional.Cheerfulness}}</span>&nbsp;Cheerfulness</td>
+	                                				<td><span class="badge badge-primary">{{mail.additional.Confident}}</span>&nbsp;Confident</td>
+	                                			</tr>
+	                                			<tr>
+	                                				<td><span class="badge badge-success">{{mail.additional.Conscientiousness}}</span>&nbsp;Conscientiousness</td>
+	                                				<td><span class="badge badge-danger">{{mail.additional.Negative}}</span>&nbsp;Negative</td>
+	                                			</tr>
+	                                			<tr>
+	                                				<td><span class="badge badge-info">{{mail.additional.Openness}}</span>&nbsp;Openness</td>
+	                                				<td><span class="badge badge-warning">{{mail.additional.Tentative}}</span>&nbsp;Tentative</td>
+	                                			</tr>
+	                                		</tbody>
+	                                	</table>
+	                                </div>                           
+	                            </div>      
                             </div>
                             <div class="col-md-4">
                                 <h3>Calls</h3>
-								
-                                <div class="panel-body list-group list-group-contacts">
-                                	<ul class="list-group border-bottom">
-                                        <li class="list-group-item">
-											<span class="contacts-title"><span class="fa fa-music text-success"></span>Recording 1</span>
-                                        <br /><br />
-                                        <p><span class="badge">10</span> Agreeableness   
-                                        , <span class="badge badge-danger">112</span>  Anger
-                                        , <span class="badge badge-success">5</span>  Openness   
-                                        , <span class="badge badge-info">0</span>  Analytical </p>                                
-                                        <div class="list-group-controls">
-                                            <button class="btn btn-primary btn-rounded"><span class="fa fa-play"></span></button>
-                                        </div>  
-										</li>
-                                        
-                                         </ul>                                   
-                                                   
-                                </div>
+	                            <div class="panel panel-success panel-hidden-controls" ng-repeat="call in calls">
+	                                <div class="panel-heading">
+	                                    <h3 class="panel-title"><span class="fa fa-microphone text-success"></span>&nbsp;{{call.title}}</h3>
+	                                    <!-- <ul class="panel-controls">
+	                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+	                                    </ul> -->
+	                                </div>
+	                                <div class="panel-body">
+	                                	<table class='table table-condensed'>
+	                                		<tbody>
+	                                			<tr>
+	                                				<td><span class="badge badge-success">{{mail.additional.Agreeableness}}</span>&nbsp;Agreeableness</td>
+	                                				<td><span class="badge badge-info">{{mail.additional.Analytical}}</span>&nbsp;Analytical</td>
+	                                			</tr>
+	                                			<tr>
+	                                				<td><span class="badge badge-warning">{{mail.additional.Cheerfulness}}</span>&nbsp;Cheerfulness</td>
+	                                				<td><span class="badge badge-primary">{{mail.additional.Confident}}</span>&nbsp;Confident</td>
+	                                			</tr>
+	                                			<tr>
+	                                				<td><span class="badge badge-success">{{mail.additional.Conscientiousness}}</span>&nbsp;Conscientiousness</td>
+	                                				<td><span class="badge badge-danger">{{mail.additional.Negative}}</span>&nbsp;Negative</td>
+	                                			</tr>
+	                                			<tr>
+	                                				<td><span class="badge badge-info">{{mail.additional.Openness}}</span>&nbsp;Openness</td>
+	                                				<td><span class="badge badge-warning">{{mail.additional.Tentative}}</span>&nbsp;Tentative</td>
+	                                			</tr>
+	                                		</tbody>
+	                                	</table>
+	                                </div>                           
+	                            </div>      
                             </div>
                             <div class="col-md-4">
-
                             <div class="widget widget-danger widget-carousel">
                                 <div class="owl-carousel" id="owl-example">
                                     <div>                                    
@@ -136,9 +140,9 @@
                                                         
                             </div>
 							<p>
-                                <button type="button" class="btn btn-info btn-rounded">Analyse Emails</button>
-                                <button type="button" class="btn btn-default btn-rounded">Analyse Calls</button>
-                                <button type="button" class="btn btn-danger btn-rounded right">Emails+Calls</button>
+                                <button type="button" class="btn btn-info btn-rounded" style="margin-bottom: 5px;">Analyse Emails</button><br />
+                                <button type="button" class="btn btn-default btn-rounded" style="margin-bottom: 5px;">Analyse Calls</button><br />
+                                <button type="button" class="btn btn-danger btn-rounded right" style="margin-bottom: 5px;">Emails+Calls</button><br />
                             </p>
                         </div>
                         </div>                        

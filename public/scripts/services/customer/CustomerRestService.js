@@ -31,7 +31,7 @@ CustomerRestService.prototype = {
      */
     getCustomerList : function(onSuccess ,onError) {
 		var url = this.customerListUrl;
-    	var url = '/home/user1/git/loan-management-app/public/data/data_2.json';    //'http://localhost:8080/Bluemix/data/data_1.json';
+    	var url = 'http://localhost:8080/Bluemix/data/data_2.json';
         return this.restServiceProxy.get(url ,{ 
             onSuccess : onSuccess,
             onError : onError,
