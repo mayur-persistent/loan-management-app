@@ -25,9 +25,9 @@ var express = require('express'),
 
 var tradeoffAnalyticsCredentials = extend({
   version: 'v1',
-  url: '<url>',
-  username: '<username>',
-  password: '<password>'
+  url: 'https://gateway.watsonplatform.net/tradeoff-analytics/api',
+  username: '7172bdda-b73c-4e68-97d7-abe62854064f',
+  password: 'gsy7QLJ7jdFg'
 }, bluemix.getServiceCreds('tradeoff_analytics')); // VCAP_SERVICES
 
 // Create the service wrapper
@@ -38,8 +38,8 @@ require('./config/express')(app);
 // Create the tone analyser service wrapper
 var credentials = extend({
   version: 'v2-experimental',
-  username: '<username>',//
-  password: '<password>'//
+  username: 'https://gateway.watsonplatform.net/tone-analyzer-experimental/api',//
+  password: 'BVyBXbpRULij'//
 }, bluemix.getServiceCreds('tone_analyzer'));
 
 
@@ -49,8 +49,8 @@ var toneAnalyzer = watson.tone_analyzer(credentials);
 var config = extend({
   version: 'v1',
   url: 'https://stream.watsonplatform.net/speech-to-text/api',
-  username: '<username>',
-  password: '<password>'
+  username: '77c15d85-a110-4b7f-8acf-a664a69b9b2b',
+  password: 'Q7Xj4xYvuwI7'
 }, vcapServices.getCredentials('speech_to_text'));
 
 var authService = watson.authorization(config);
@@ -58,7 +58,7 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
-});
+}); 
 // render index page
 app.get('/', function(req, res) {
   res.render('index', { ct: req._csrfToken });
