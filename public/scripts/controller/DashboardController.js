@@ -84,7 +84,7 @@ app.controller('DashboardController', ['$scope', '$rootScope','customerService',
     $scope.loadProfile = function (id) {
     	$location.path('customerDetail/'+id)
     };
-
+  
     $scope.init = function(){
     	   toneAnalyserService.getTokenForSpeech(function (code, data) {
     	   	console.log(data);
