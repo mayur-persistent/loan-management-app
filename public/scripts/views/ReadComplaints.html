@@ -5,7 +5,6 @@
         <div class="page-title">                    
             <h2><span class="fa fa-file-text"></span> Message</h2>
         </div>                                                                                
-        
         <div class="pull-right">                                                                                    
             <button class="btn btn-default"><span class="fa fa-print"></span> Print</button>
             <button class="btn btn-default content-frame-left-toggle"><span class="fa fa-bars"></span></button>
@@ -40,12 +39,12 @@
     </div>
     <!-- END CONTENT FRAME LEFT -->
     <!-- START CONTENT FRAME BODY -->
-    <div class="content-frame-body">
+    <div class="content-frame-body" ng-repeat="mail in emails" ng-if="mail.msgId===selectedMailId">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="pull-left">
                     <img src="assets/images/users/user2.jpg" class="panel-title-image" alt="John Doe"/>
-                    <h3 class="panel-title">Martha James <small>marthajames@domain.com</small></h3>
+                    <h3 class="panel-title">{{mail.sender}} <small>{{mail.mailid}}</small></h3>
                 </div>
                 <div class="pull-right">
                     <button class="btn btn-default"><span class="fa fa-mail-reply"></span></button>
@@ -54,17 +53,8 @@
                 </div>
             </div>
             <div class="panel-body">
-                <h3>Loan complaint <small class="pull-right text-muted"><span class="fa fa-clock-o"></span> Today, Sep 18, 14:33</small></h3>
-                <p>Hi John,</p>
-                <p>I would like to make a complaint against your company. The details are set out below.</p>
-                <p>On 20 November I took out a loan of £100 with you.</p>
-                <p>You did not check that I could afford to pay back the loan when I took it out. My only income is £56.25 a week from Jobseekers Allowance and I pay £15 a week maintenance for my children. I now find that I am struggling to pay back what I owe.</p>
-                <p>I had problems paying back my loan because I'm on such a low income. I contacted you to say I was in financial difficulty and offered to repay the loan at a more affordable rate of £5 a week. You did not respond sympathetically and would not accept my offer of repayment.</p>
-                <p>Taking out the loan means I can't afford to keep up with my maintenance payments and my ex-partner won't let me see the children.</p>
-                <p>What I would like you to do is to freeze the interest and charges on my loan and accept the repayment offer of £5 a week.</p>
-                <p>If you fail to resolve my complaint within 8 weeks, or if matters are not settled to my satisfaction, I will have no alternative but to refer my complaint to the Financial Ombudsman Service and your trade association.</p>
-                <p>I look forward to hearing from you.</p>
-                <p class="text-muted"><strong>Thanks<br/>Martha James</strong></p> 
+                <h3>{{mail.subject}} <small class="pull-right text-muted"><span class="fa fa-clock-o"></span>{{mail.date}}</small></h3>
+                <div ng-bind-html="trustHtml(mail.text)"></div>
                 <div class="form-group push-up-20">
                     <label>Quick Reply</label>
                     <textarea class="form-control summernote_lite" rows="3" placeholder="Click to get editor"></textarea>
@@ -86,7 +76,7 @@
                 </table>
             </div>
             <div class="panel-footer">
-                &nbsp;&nbsp;<button type="button" class="btn btn-primary mb-control"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData()"><span class="fa fa-eye"></span>Analyse</button> 
+                &nbsp;&nbsp;<button type="button" class="btn btn-primary mb-control"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData(mail.text)"><span class="fa fa-eye"></span>Analyse</button> 
                 &nbsp;&nbsp;<button class="btn btn-success pull-right"><span class="fa fa-mail-reply"></span> Post Reply</button>
             </div>
         </div>

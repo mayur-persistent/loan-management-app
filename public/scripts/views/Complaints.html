@@ -67,43 +67,17 @@
                                 </div>
                             </div>
                             <div class="panel-body mail">
-                                
-                                <div class="mail-item mail-unread mail-info">                                    
+                                <div class="mail-item mail-unread mail-info" ng-repeat="mail in emails">                                    
                                     <div class="mail-checkbox">
                                         <input type="checkbox" class="icheckbox"/>
                                     </div>
                                     <div class="mail-star">
                                         <span class="fa fa-star-o"></span>
                                     </div>
-                                    <div class="mail-user">Martha James</div>                                    
-                                    <a href="#/email/read" class="mail-text">Loan complaint</a>                                    
-                                    <div class="mail-date">Today, 11:21</div>
+                                    <div class="mail-user">{{mail.sender}}</div>                                    
+                                    <a href="#/email/read/{{mail.msgId}}" class="mail-text">{{mail.subject}}</a>                                    
+                                    <div class="mail-date">{{mail.date}}</div>
                                 </div>
-                                
-                                <div class="mail-item mail-unread mail-danger">                                    
-                                    <div class="mail-checkbox">
-                                        <input type="checkbox" class="icheckbox"/>
-                                    </div>
-                                    <div class="mail-star">
-                                        <span class="fa fa-star-o"></span>
-                                    </div>
-                                    <div class="mail-user">John Doe</div>                                    
-                                    <a href="#/email/read" class="mail-text">New Windows 9 App</a>                                    
-                                    <div class="mail-date">Today, 10:36</div>
-                                </div>
-                                
-                                <div class="mail-item mail-success">
-                                    <div class="mail-checkbox">
-                                        <input type="checkbox" class="icheckbox"/>
-                                    </div>
-                                    <div class="mail-star">
-                                        <span class="fa fa-star-o"></span>
-                                    </div>
-                                    <div class="mail-user">Nadia Ali</div>                                    
-                                    <a href="#/email/read" class="mail-text">Check my new song</a>                                    
-                                    <div class="mail-date">Yesterday, 20:19</div>
-                                </div>
-                                
                             </div>
                             <div class="panel-footer">                                
                                 <div class="btn-group">

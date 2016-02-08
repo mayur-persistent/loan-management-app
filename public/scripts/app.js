@@ -5,9 +5,9 @@ var app = angular.module('loansapp', ['ngRoute','chart.js','ngSanitize']).config
     controller: 'DashboardController'
   }).when('/complaints', {
     templateUrl: 'scripts/views/Complaints.html',
-    controller: 'DashboardController'
+    controller: 'CustomerController'
   })
-  .when('/email/read', {
+  .when('/email/read/:msgId', {
     templateUrl: 'scripts/views/ReadComplaints.html',
     controller: 'CustomerController'
   }).when('/customerList', {
