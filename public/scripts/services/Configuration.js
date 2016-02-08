@@ -1,7 +1,7 @@
 var Configuration = function () {
     var location = window.location;
     this.ENV = 'FORBIDDEN';
-    this.siteUrl = 'https://loan-management-app-bluemix-demo.mybluemix.net';
+    this.siteUrl = 'http://providentia.mybluemix.net';
     
     this.modelConfig = {
     	'model1' : {

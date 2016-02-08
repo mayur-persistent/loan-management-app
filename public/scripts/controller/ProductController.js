@@ -22,9 +22,9 @@ app.controller('ProductController', ['$scope', '$rootScope','customerService','$
 	$scope.emails.push({'msgId':'3', 'subject':'Technical Issues','text':'Hi John,This mail is to inform you that I wouldn\'t be able to do automatic EMI payment $525 for the Loan No: 02882111 for the month of February as the account balance will be  less than the required amount.<br> Kindly bear with problem and could you please let me know the future course of action. <br><br>Jennifer Baker', 'additional':{'Agreeableness':65, 'Analytical':8, 'Anger':2, 'Cheerfulness':2, 'Confident':1, 'Conscientiousness':42, 'Negative':4, 'Openness':113, 'Tentative':0}});
 
 	$scope.calls = [];
-	$scope.calls.push({'title':'Recorded on 2-5-2016 12:00:00','filepath':'/home/user1/git/loan-management-app/public/audio/payment_voice/payment1.wav', 'fileJson':'/home/user1/git/loan-management-app/public/audio/payment_voice/payment1.json'});
-	$scope.calls.push({'title':'Recorded on 2-6-2016 12:00:00','filepath':'/home/user1/git/loan-management-app/public/audio/payment_voice/payment2.wav', 'fileJson':'/home/user1/git/loan-management-app/public/audio/payment_voice/payment2.json'});
-	$scope.calls.push({'title':'Recorded on 2-6-2016 16:45:00','filepath':'/home/user1/git/loan-management-app/public/audio/payment_voice/payment3.wav', 'fileJson':'/home/user1/git/loan-management-app/public/audio/payment_voice/payment3.json'});
+	$scope.calls.push({'title':'Recorded on 2-5-2016 12:00:00','filepath':'audio/payment_voice/payment1.wav', 'fileJson':'/home/user1/git/loan-management-app/public/audio/payment_voice/payment1.json'});
+	$scope.calls.push({'title':'Recorded on 2-6-2016 12:00:00','filepath':'audio/payment_voice/payment2.wav', 'fileJson':'/home/user1/git/loan-management-app/public/audio/payment_voice/payment2.json'});
+	$scope.calls.push({'title':'Recorded on 2-6-2016 16:45:00','filepath':'audio/payment_voice/payment3.wav', 'fileJson':'/home/user1/git/loan-management-app/public/audio/payment_voice/payment3.json'});
 
 	
 	
