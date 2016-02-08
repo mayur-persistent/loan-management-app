@@ -6,9 +6,10 @@
  * @constructor
  * @param $scope {angular}
  */
-app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$http', '$sce', 'customerService','$location','toneAnalyserService', 'UILoader'
-       	                           	,function($scope, $rootScope, $routeParams, $http, $sce, customerService,$location,toneAnalyserService, UILoader) {
-    
+
+app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$http', '$sce', 'customerService','$location','toneAnalyserService', 'UILoader','$timeout'
+       	                           	,function($scope, $rootScope, $routeParams, $http, $sce, customerService,$location,toneAnalyserService, UILoader,$timeout) {
+
     $scope.toggle = function($event){  
         var item = $event.target.parentNode;
       //  var item = $(this).parent('.faq-item');
@@ -22,7 +23,9 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
         
         onresize(300);
     };
-    
+
+	$scope.loaderMessage = 'Analysing ..';
+    $scope.selectedEmail = {};
 	$scope.emails = [];
 	$scope.emails.push({'msgId':'1', 'sender':'Jennifer Baker', 'mailid':'jennybaker@domain.com', 'date':'Today Feb 9 11:15', 'subject':'Re : Delay in payment','text':'Hi John,<br>This mail is to inform you that I wouldn\'t be able to do automatic EMI payment $525 for the Loan No: 02882111 for the month of February as the account balance will be  less than the required amount.<br>Kindly bear with problem and could you please let me know the future course of action. <br><br>Jennifer Baker', 'additional':null})
 	$scope.emails.push({'msgId':'2', 'sender':'Sally Ranger', 'mailid':'sally.ranger@domain.com', 'date':'Today Feb 9 14:00', 'subject':'Personal Loan Enquiry','text':'Hi John,<br>I am an account holder in your bank with my saving/ current number 003-117-454646. <br> I had applied for personal loan loan in your esteemed bank. But the loan is not approved for one or another reason. <br>  I have fulfilled all conditions as demanded by your bank staff but now they are saying that the loan cannot be approved for the reason (provide the reason of rejection as given by staff).<br>I request you to consider my application again and guide me that what should I do to get approval.<br><br>Thanking you.<br>Sally Ranger', 'additional':null})
@@ -41,51 +44,67 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
 	var tmpData = "text=Hi+Team%2C+%0A%0AI+know+the+times+are+difficult!+Our+sales+have+been+disappointing+for+the+past+three+quarters+for+our+data+analytics+product+suite.+We+have+a+competitive+data+analytics+product+suite+in+the+industry.+But+we+need+to+do+our+job+selling+it!+%0A%0AWe+need+to+acknowledge+and+fix+our+sales+challenges.+We+can%E2%80%99t+blame+the+economy+for+our+lack+of+execution!+We+are+missing+critical+sales+opportunities.+Our+product++is+in+no+way+inferior+to+the+competitor+products.+Our+clients+are+hungry+for+analytical+tools+to+improve+their+business+outcomes.+Economy+has+nothing+to+do+with+it.+In+fact%2C+it+is+in+times+such+as+this%2C+our+clients+want+to+get+the+insights+they+need+to+turn+their+businesses+around.+Let%E2%80%99s+buckle+up+and+execute.+%0A%0AIn+summary%2C+we+have+a+competitive+product%2C+and+a+hungry+market.+We+have+to+do+our+job+to+close+the+deals.%0A%0AJennifer+Baker%0ASales+Leader%2C+North-East+Geo%2C%0AData+Analytics+Inc."; 
 
 	 $scope.getAnalysedData = function(message) {
-		var uiLoader = new UILoader($(".modal-body","#analyseModal"));
-		uiLoader.show();
-		toneAnalyserService.getToneAnalysedData(message, function (code, data) {
+		//var uiLoader = new UILoader($(".modal-body","#analyseModal"));
+		//uiLoader.show();
+		$scope.loader = true;
+		$scope.loaderMessage = 'Analysing text...';
+		toneAnalyserService.getToneAnalysedData('text='+message, function (code, data) {
 			$scope.analysedData = data;
+		//	console.log(data);
 			google.charts.setOnLoadCallback(drawChart());
-			uiLoader.hide();
-			var tmpData = data;
+			//uiLoader.hide();
 			var additionalArray = {};
-			angular.forEach(tmpData.children, function(toneData) {
+			angular.forEach($scope.analysedData.children, function(toneData) {
                 angular.forEach(toneData.children, function(innerData) {
                     additionalArray[innerData.name] = innerData.word_count;
                 });
             });
-			/*if(angular.isDefined(additionalArray)){
-				angular.forEach($scope.emails, function(email) {
-	                if(email.msgId === msgId){
-	                	email.additional = additionalArray;
-	                	$scope.selectedEmail = email;
-	                }
-	            });
-			}*/
+
+           // console.log(additionalArray);
+			if(angular.isDefined(additionalArray)){
+				//angular.forEach($scope.emails, function(email) {
+	               // if(email.msgId === msgId){
+	                	$scope.additional = additionalArray;
+	                //	$scope.selectedEmail = email;
+	                //}
+	          //  });
+			}
+			$scope.loader = false;
 	    },function (code, data) {
 			 $scope.showMessage('info',SERVER_FAILURE);
-			 uiLoader.hide();
+			 $scope.loader = false;
 	    });
 	 }
 	 
 	 $scope.getRecordingAnalysedData = function(filename) {
          var transcript = '';
+         $scope.loader = true;
+         $scope.loaderMessage = 'Analysing Voice';
+          $timeout(function(){
+                	
+                }, 500);
 		//console.log(filename);
-		var uiLoader = new UILoader($(".modal-body","#recordingAnalyseModal"));
-		uiLoader.show();
-            toneAnalyserService.getAudioAnalysis(filename,
-                         function (code, data) {
-                            console.log(data.results);
+		//var uiLoader = new UILoader($(".modal-body","#recordingAnalyseModal"));
+		
+		//uiLoader.show();
+            toneAnalyserService.getAudioAnalysis(filename,function (code, data) {
+                         	$scope.loaderMessage = 'Speech Converted <br /> Analysing Tone';
                         angular.forEach(data.results ,function(record, rkey) {
                             if(record.final==true){
-                                transcript = 'text='+record.alternatives[0].transcript
+                                transcript = record.alternatives[0].transcript
                                }
                         });
-                $scope.getAnalysedData(transcript);
-                 uiLoader.hide();
+
+                $timeout(function(){
+                	$scope.getAnalysedData(transcript)
+                	
+                }, 300);
+                //$scope.getAnalysedData(transcript);
+                // uiLoader.hide();
                          },
                          function (code, data) {
-                         uiLoader.hide();
+                    $scope.loader = false;
+                         //uiLoader.hide();
             });
 		/*$http.get(jsonpath).success(function(data, status, headers, config) {
              uiLoader.hide();
@@ -98,22 +117,56 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
          });*/
 	 }
 
+	$scope.AnalyseAll = function(){
+		var transcript = '';
+		$scope.analysisCummulative = []
+		angular.forEach($scope.calls, function(call) {
+	        toneAnalyserService.getAudioAnalysis(call.filename,function (code, data) {
+	        			
+                        angular.forEach(data.results ,function(record, rkey) {
+                            if(record.final==true){
+                                transcript = record.alternatives[0].transcript
+                               }
+                        });
+                
+                		toneAnalyserService.getToneAnalysedData('text='+transcript, function (code, data) {	
+                			console.log(data);		
+							$scope.analysisCummulative.push(data);},function (code, data) {});
+               
+                         },
+                         function (code, data) {
+            });      
+          });
+          
+          angular.forEach($scope.emails, function(email) {
+	       
+                		toneAnalyserService.getToneAnalysedData('text='+email.text, function (code, data) {	
+                			console.log(data);		
+							$scope.analysisCummulative.push(data);},function (code, data) {});              
+                         
+        	});
+        	console.log($scope.analysisCummulative);
+		
+	};
 	 function drawChart() {
 	 	var toneData = $scope.analysedData;
+	 	//console.log(toneData);
             var data = google.visualization.arrayToDataTable([
               ['Tone', 'Count word'],
               [toneData.children[0].name, toneData.children[0].word_count],
               [toneData.children[1].name, toneData.children[1].word_count],
               [toneData.children[2].name, toneData.children[2].word_count]
             ]);
-
+			$scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
+		    $scope.data = [300, 500, 100];
             var options = {
               title: 'Analysed Tone Chart',
               is3D: true,
               width: 800,
               height: 450
             };
-
+			
+			
             var chart = new google.visualization.PieChart(document.getElementById('analysePieChart'));
             chart.draw(data, options);
      }

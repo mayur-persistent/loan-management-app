@@ -2,7 +2,7 @@
   	  <div class="col-md-6">            
              <div class="panel panel-default">
                  <div class="panel-body">
-                     <h3 class="push-down-0">Emails <button type="button" class="btn btn-success mb-control right btn-rounded"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getAnalysedData()"><span class="fa fa-eye"></span>Analyse All</button></h3>
+                     <h3 class="push-down-0">Emails </h3>
                  </div>
                  <div class="panel-body faq" >
                      <div class="faq-item" ng-repeat="email in emails">
@@ -27,7 +27,7 @@
        <div class="col-md-6">
              <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 class="push-down-0">Recordings <button type="button" class="btn btn-success mb-control right btn-rounded"  data-toggle="modal" data-target="#analyseModal" data-box="#message-box-success" ng-click="getRecordingAnalysedData()"><span class="fa fa-eye"></span>Analyse All</button></h3></h3>
+                    <h3 class="push-down-0">Recordings </h3></h3>
                 </div>
                 <div class="panel-body faq" >
                     <div class="faq-item" ng-repeat="call in calls">
@@ -43,8 +43,23 @@
                 </div>
             </div>
        </div>
+       
 </div>
-<div id="analyseModal" class="modal fade" tabindex="-1" role="dialog">
+ <div class="row scRow">
+                        <div class="col-md-12 scCol">
+
+                            <div class="panel panel-success" id="grid_block_5">
+                                <div class="panel-heading">                                        
+                                    <h3 class="panel-title">Setiment Quotient</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <button type="button" class="btn btn-success mb-control right btn-rounded" ng-click="AnalyseAll()"><span class="fa fa-eye"></span>Calculate SQ</button>
+                                </div>
+                            </div>                        
+
+                        </div>
+                    </div>
+<div id="analyseModal" class="modal fade" tabindex="-1" role="dialog" ng-controller="CustomerController">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -52,22 +67,29 @@
                 <h4 class="modal-title">Analyse Data</h4>
             </div>
             <div class="modal-body">
-            
-            	<div class="row">
+            	<div class="row" ng-show="loader">
+            		<div class="col-md-12 col-lg-12 col-sm-12 text-center">
+            			 <img  style="margin-top: 100px;" src="img/loader.gif"/><br />
+            			 {{loaderMessage}}
+            			</div>
+            	</div>
+            	<div class="row" ng-hide="loader">
             		<div class="col-md-9 col-lg-9 col-sm-9">
-            			 <div class="chart-holder" id="analysePieChart"></div>
+            			
+            			 <div class="chart-holder"  id="analysePieChart"></div>
+            			 
             		</div>
             		<div class="col-md-3 col-lg-3 col-sm-3">
 		              <p>
-		               	<span class="badge badge-success" style="margin-bottom: 5px;">{{selectedEmail.additional.Agreeableness}}</span>&nbspAgreeableness&nbsp<br />
-		            	<span class="badge badge-info" style="margin-bottom: 5px;">{{selectedEmail.additional.Analytical}}</span>&nbspAnalytical&nbsp<br />
-		            	<span class="badge badge-danger" style="margin-bottom: 5px;">{{selectedEmail.additional.Anger}}</span>&nbspAnger&nbsp<br />
-		           		<span class="badge badge-warning" style="margin-bottom: 5px;">{{selectedEmail.additional.Cheerfulness}}</span>&nbspCheerfulness&nbsp<br />
-		           		<span class="badge badge-primary" style="margin-bottom: 5px;">{{selectedEmail.additional.Confident}}</span>&nbspConfident&nbsp<br />
-		            	<span class="badge badge-success" style="margin-bottom: 5px;">{{selectedEmail.additional.Conscientiousness}}</span>&nbspConscientiousness&nbsp<br />
-		            	<span class="badge badge-danger" style="margin-bottom: 5px;">{{selectedEmail.additional.Negative}}</span>&nbspNegative&nbsp<br />
-		           		<span class="badge badge-info" style="margin-bottom: 5px;">{{selectedEmail.additional.Openness}}</span>&nbspOpenness&nbsp<br />
-		           		<span class="badge badge-warning" style="margin-bottom: 5px;">{{selectedEmail.additional.Tentative}}</span>&nbspTentative&nbsp<br />
+		               	<span class="badge badge-success" style="margin-bottom: 5px;">{{additional.Agreeableness}}</span>&nbspAgreeableness&nbsp<br />
+		            	<span class="badge badge-info" style="margin-bottom: 5px;">{{additional.Analytical}}</span>&nbspAnalytical&nbsp<br />
+		            	<span class="badge badge-danger" style="margin-bottom: 5px;">{{additional.Anger}}</span>&nbspAnger&nbsp<br />
+		           		<span class="badge badge-warning" style="margin-bottom: 5px;">{{additional.Cheerfulness}}</span>&nbspCheerfulness&nbsp<br />
+		           		<span class="badge badge-primary" style="margin-bottom: 5px;">{{additional.Confident}}</span>&nbspConfident&nbsp<br />
+		            	<span class="badge badge-success" style="margin-bottom: 5px;">{{additional.Conscientiousness}}</span>&nbspConscientiousness&nbsp<br />
+		            	<span class="badge badge-danger" style="margin-bottom: 5px;">{{additional.Negative}}</span>&nbspNegative&nbsp<br />
+		           		<span class="badge badge-info" style="margin-bottom: 5px;">{{additional.Openness}}</span>&nbspOpenness&nbsp<br />
+		           		<span class="badge badge-warning" style="margin-bottom: 5px;">{{additional.Tentative}}</span>&nbspTentative&nbsp<br />
 		           	 </p>            		
             		</div>
             	</div>
@@ -88,7 +110,6 @@
                 <h4 class="modal-title">Analyse Recording</h4>
             </div>
             <div class="modal-body">
-                <div class="chart-holder" id="analysePieChart"></div>
                 
             </div>
             <div class="modal-footer">
@@ -98,3 +119,6 @@
         </div>
     </div>
 </div>
+<script>
+	
+</script>

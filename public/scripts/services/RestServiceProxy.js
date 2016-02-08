@@ -49,7 +49,6 @@ RestServiceProxy.prototype = {
 
         post : function(endpoint, options) {
 			var http = getHttpObject();    
-            console.log(options);
             
            var request =  {
     method: 'POST',
