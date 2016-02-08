@@ -27,11 +27,21 @@ CustomerRestService.prototype = {
      * get customers profiles
      * @method getCustomerList
      * @param onSuccess
-     * @param onError
+     * @param onError   var url = 'http://localhost:8080/loan-management-app/public/data/userList.json';
      */
     getCustomerList : function(onSuccess ,onError) {
 		var url = this.customerListUrl;
     	var url = 'data/data_2.json';
+        return this.restServiceProxy.get(url ,{ 
+            onSuccess : onSuccess,
+            onError : onError,
+            on400 : onError
+        });
+    },
+    
+    getProfileUserList : function(onSuccess ,onError) {
+		//var url = this.customerListUrl;
+    	var url = 'data/userList.json';
         return this.restServiceProxy.get(url ,{ 
             onSuccess : onSuccess,
             onError : onError,

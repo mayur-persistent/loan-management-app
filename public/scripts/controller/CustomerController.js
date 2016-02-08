@@ -62,7 +62,6 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
 	                }
 	            });
 			}*/
-			
 	    },function (code, data) {
 			 $scope.showMessage('info',SERVER_FAILURE);
 			 uiLoader.hide();
@@ -82,12 +81,10 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
                                 transcript = 'text='+record.alternatives[0].transcript
                                }
                         });
-                
                 $scope.getAnalysedData(transcript);
                  uiLoader.hide();
                          },
                          function (code, data) {
-                    
                          uiLoader.hide();
             });
 		/*$http.get(jsonpath).success(function(data, status, headers, config) {

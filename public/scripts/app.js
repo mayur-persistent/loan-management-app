@@ -23,8 +23,14 @@ var app = angular.module('loansapp', ['ngRoute','chart.js','ngSanitize']).config
     templateUrl: 'scripts/views/ProductList.html',
     controller: 'ProductController'
   })
-
-
+  .when('/viewProfile', {
+    templateUrl: 'scripts/views/profile.html',
+    controller: 'ProfileController'
+  })
+  .when('/personality', {
+    templateUrl: 'scripts/views/profile.html',
+    controller: 'ProfileController'
+  })
 
 });
 
