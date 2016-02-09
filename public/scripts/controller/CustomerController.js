@@ -119,7 +119,7 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
 
 	$scope.AnalyseAll = function(){
 		var transcript = '';
-		$scope.analysisCummulative = []
+		$scope.analysisCummulative = [];
 		angular.forEach($scope.calls, function(call) {
 	        toneAnalyserService.getAudioAnalysis(call.filename,function (code, data) {
 	        			
@@ -130,7 +130,6 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
                         });
                 
                 		toneAnalyserService.getToneAnalysedData('text='+transcript, function (code, data) {	
-                			console.log(data);		
 							$scope.analysisCummulative.push(data);},function (code, data) {});
                
                          },
@@ -140,13 +139,17 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
           
           angular.forEach($scope.emails, function(email) {
 	       
-                		toneAnalyserService.getToneAnalysedData('text='+email.text, function (code, data) {	
-                			console.log(data);		
-							$scope.analysisCummulative.push(data);},function (code, data) {});              
+	            		toneAnalyserService.getToneAnalysedData('text='+email.text, function (code, data) {
+							$scope.analysisCummulative.push(data);
+							
+							},function (code, data) {});  
+							            
                          
         	});
-        	console.log($scope.analysisCummulative);
-		
+        	
+		$timeout(function(){
+                	console.log($scope.analysisCummulative);                	
+                }, 1000);
 	};
 	 function drawChart() {
 	 	var toneData = $scope.analysedData;
