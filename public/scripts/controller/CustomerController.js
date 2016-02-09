@@ -27,9 +27,9 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
 	$scope.loaderMessage = 'Analysing ..';
     $scope.selectedEmail = {};
 	$scope.emails = [];
-	$scope.emails.push({'msgId':'1', 'sender':'Jennifer Baker', 'mailid':'jennybaker@domain.com', 'date':'Today Feb 9 11:15', 'subject':'Re : Delay in payment','text':'Hi John,<br>This mail is to inform you that I wouldn\'t be able to do automatic EMI payment $525 for the Loan No: 02882111 for the month of February as the account balance will be  less than the required amount.<br>Kindly bear with problem and could you please let me know the future course of action. <br><br>Jennifer Baker', 'additional':null})
-	$scope.emails.push({'msgId':'2', 'sender':'Sally Ranger', 'mailid':'sally.ranger@domain.com', 'date':'Today Feb 9 14:00', 'subject':'Personal Loan Enquiry','text':'Hi John,<br>I am an account holder in your bank with my saving/ current number 003-117-454646. <br> I had applied for personal loan loan in your esteemed bank. But the loan is not approved for one or another reason. <br>  I have fulfilled all conditions as demanded by your bank staff but now they are saying that the loan cannot be approved for the reason (provide the reason of rejection as given by staff).<br>I request you to consider my application again and guide me that what should I do to get approval.<br><br>Thanking you.<br>Sally Ranger', 'additional':null})
-	$scope.emails.push({'msgId':'3', 'sender':'Fernando Mia', 'mailid':'fernando_mia@domain.com', 'date':'Yesterday Feb 8 18:46', 'subject':'Technical Issues','text':'Hi John,<br>This mail is to inform you that I wouldn\'t be able to do automatic EMI payment $525 for the Loan No: 02882111 for the month of February as the account balance will be  less than the required amount.<br> Kindly bear with problem and could you please let me know the future course of action. <br><br>Fernando Mia', 'additional':null})
+	$scope.emails.push({'msgId':'1', 'sender':'Halim Dwivedi', 'mailid':'halimDwivedi@domain.com', 'date':'Today Feb 9 11:15', 'subject':'Re : Delay in payment','text':'Hi Dmitry,<br>This mail is to inform you that I wouldn\'t be able to do automatic EMI payment $525 for the Loan No: 02882111 for the month of February as the account balance will be  less than the required amount.<br>Kindly bear with problem and could you please let me know the future course of action. <br><br>Halim Dwivedi', 'additional':null})
+	$scope.emails.push({'msgId':'2', 'sender':'Halim Dwivedi', 'mailid':'halimDwivedi@domain.com', 'date':'Today Feb 9 14:00', 'subject':'Personal Loan Enquiry','text':'Hi Dmitry,<br>I am an account holder in your bank with my saving/ current number 003-117-454646. <br> I had applied for personal loan loan in your esteemed bank. But the loan is not approved for one or another reason. <br>  I have fulfilled all conditions as demanded by your bank staff but now they are saying that the loan cannot be approved for the reason (provide the reason of rejection as given by staff).<br>I request you to consider my application again and guide me that what should I do to get approval.<br><br>Thanking you.<br>Halim Dwivedi', 'additional':null})
+	$scope.emails.push({'msgId':'3', 'sender':'Halim Dwivedi', 'mailid':'halimDwivedi@domain.com', 'date':'Yesterday Feb 8 18:46', 'subject':'Technical Issues','text':'Hi Dmitry,<br>This mail is to inform you that I wouldn\'t be able to do automatic EMI payment $525 for the Loan No: 02882111 for the month of February as the account balance will be  less than the required amount.<br> Kindly bear with problem and could you please let me know the future course of action. <br><br>Halim Dwivedi', 'additional':null})
 	
     $scope.$on('$routeChangeSuccess', function () {
         if(angular.isDefined($routeParams.msgId)) $scope.selectedMailId = $routeParams.msgId;
@@ -119,7 +119,7 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
 
 	$scope.AnalyseAll = function(){
 		var transcript = '';
-		$scope.analysisCummulative = []
+		$scope.analysisCummulative = [];
 		angular.forEach($scope.calls, function(call) {
 	        toneAnalyserService.getAudioAnalysis(call.filename,function (code, data) {
 	        			
@@ -130,7 +130,6 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
                         });
                 
                 		toneAnalyserService.getToneAnalysedData('text='+transcript, function (code, data) {	
-                			console.log(data);		
 							$scope.analysisCummulative.push(data);},function (code, data) {});
                
                          },
@@ -140,13 +139,17 @@ app.controller('CustomerController', ['$scope', '$rootScope', '$routeParams', '$
           
           angular.forEach($scope.emails, function(email) {
 	       
-                		toneAnalyserService.getToneAnalysedData('text='+email.text, function (code, data) {	
-                			console.log(data);		
-							$scope.analysisCummulative.push(data);},function (code, data) {});              
+	            		toneAnalyserService.getToneAnalysedData('text='+email.text, function (code, data) {
+							$scope.analysisCummulative.push(data);
+							
+							},function (code, data) {});  
+							            
                          
         	});
-        	console.log($scope.analysisCummulative);
-		
+        	
+		$timeout(function(){
+                	console.log($scope.analysisCummulative);                	
+                }, 1000);
 	};
 	 function drawChart() {
 	 	var toneData = $scope.analysedData;
