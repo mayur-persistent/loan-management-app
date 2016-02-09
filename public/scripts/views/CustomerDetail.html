@@ -45,6 +45,7 @@
        </div>
        
 </div>
+     
  <div class="row scRow">
                         <div class="col-md-12 scCol">
 
@@ -53,8 +54,73 @@
                                     <h3 class="panel-title">Setiment Quotient</h3>
                                 </div>
                                 <div class="panel-body">
+                                	<div class="col-md-2">   
                                     <button type="button" class="btn btn-success mb-control right btn-rounded" ng-click="AnalyseAll()"><span class="fa fa-eye"></span>Calculate SQ</button>
+                                   </div>
+                                    <div class="col-md-10"> 
+                                    	<div class="row" ng-show="loader">
+					            		<div class="col-md-12 col-lg-12 col-sm-12 text-center">
+					            			 <img src="img/loader.gif"/><br />
+					            			 {{loaderMessage}}
+					            			</div>
+					            	</div>                       
+	                            <a class="tile tile-info tile-valign"  ng-show="socialQuotient">
+	                            	
+	                                {{socialQuotient}}
+	                                <div class="informer informer-default">Social Quotient</div>
+	                                <div class="informer informer-default dir-br"><span class="fa fa-users"></span></div>
+	                            </a> 
+	                             <div class="row"  ng-show="socialQuotient">
+                        <!-- TAGS LIST -->
+                        <div class="col-md-4">
+                            <div class="panel panel-default push-up-20">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Positive</h3>
                                 </div>
+                                
+                                <div class="panel-body">
+                                    <ul class="list-tags">
+                                        <li><a href="#"><span class="fa fa-tag"></span> Cheerfulness</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Confident</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Openness</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Agreeableness</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div><div class="col-md-4">
+                            <div class="panel panel-default push-up-20">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Negative</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="list-tags">
+                                        <li><a href="#"><span class="fa fa-tag"></span> Negative</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Anger</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Tentative</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div><div class="col-md-4">
+                            <div class="panel panel-default push-up-20">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Intermediate</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="list-tags">
+                                        <li><a href="#"><span class="fa fa-tag"></span> Conscientiousness</a></li>
+                                        <li><a href="#"><span class="fa fa-tag"></span> Analytical</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- END TAGS LIST -->
+                                </div>                           
+	                        </div>
+	                  
+                                
                             </div>                        
 
                         </div>
