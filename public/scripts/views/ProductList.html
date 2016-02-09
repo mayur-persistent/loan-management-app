@@ -1,155 +1,179 @@
   <!-- START CONTENT FRAME -->
-                <div class="content-frame">     
-                    <!-- START CONTENT FRAME TOP -->
-                    <div class="content-frame-top">                        
-                        <div class="page-title">                    
-                            <h2><span class="fa fa-arrow-circle-o-right"></span> Products</h2>
-                        </div>                                                
-                        <div class="pull-right">
-                            <button class="btn btn-default content-frame-left-toggle"><span class="fa fa-bars"></span></button>
-                        </div>                                
-                        <div class="pull-right" style="width: 100px; margin-right: 5px;">
-                            <select class="form-control select">        
-                                <option>Loan</option>
-                                <option>Mutual Funds</option>
-                                <option>Savings</option>
-                                <option>All</option>       
-                            </select>
-                        </div>
-                    </div>                    
-                    <div class="content-frame-left">
-                        <div class="form-group push-up-10">
-                            <h4>Search in Products:</h4>
-                            <div class="input-group">
-                                <div class="input-group-addon"><span class="fa fa-search"></span></div>
-                                <input type="text" class="form-control" placeholder="keyword..."/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <h4>Product List:</h4>
-                            <div class="list-group border-bottom">
-                                <a href="#" class="list-group-item active"><span class="fa fa-circle text-primary"></span> Home Loans</a>
-                                <a href="#" class="list-group-item"><span class="fa fa-circle text-success"></span> Auto Loans</a>
-                                <a href="#" class="list-group-item"><span class="fa fa-circle text-warning"></span> Payday Loans</a>
-                                <a href="#" class="list-group-item"><span class="fa fa-circle text-danger"></span> Personal Loans </a>
-                                <a href="#" class="list-group-item"><span class="fa fa-circle text-info"></span> Credit Card Loans</a>
-                            </div>
-                        </div>
-                        
-                        
-                    </div>       
-                    <!-- END CONTENT FRAME TOP -->
-                    
-                    <!-- START CONTENT FRAME BODY -->
-                    <div class="content-frame-body">     
-                        <div class="row push-up-10">
-                            <div class="col-md-4">          
-                               <h3>Emails</h3>
-	                            <div class="panel panel-success panel-hidden-controls" ng-repeat="mail in emails">
-	                                <div class="panel-heading">
-	                                    <h3 class="panel-title"><span class="fa fa-envelope text-success"></span>&nbsp;{{mail.subject}}</h3>
-	                                    <!-- <ul class="panel-controls">
-	                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
-	                                    </ul> -->
-	                                </div>
-	                                <div class="panel-body">
-	                                	<table class='table table-condensed'>
-	                                		<tbody>
-	                                			<tr>
-	                                				<td><span class="badge badge-success">{{mail.additional.Agreeableness}}</span>&nbsp;Agreeableness</td>
-	                                				<td><span class="badge badge-info">{{mail.additional.Analytical}}</span>&nbsp;Analytical</td>
-	                                			</tr>
-	                                			<tr>
-	                                				<td><span class="badge badge-warning">{{mail.additional.Cheerfulness}}</span>&nbsp;Cheerfulness</td>
-	                                				<td><span class="badge badge-primary">{{mail.additional.Confident}}</span>&nbsp;Confident</td>
-	                                			</tr>
-	                                			<tr>
-	                                				<td><span class="badge badge-success">{{mail.additional.Conscientiousness}}</span>&nbsp;Conscientiousness</td>
-	                                				<td><span class="badge badge-danger">{{mail.additional.Negative}}</span>&nbsp;Negative</td>
-	                                			</tr>
-	                                			<tr>
-	                                				<td><span class="badge badge-info">{{mail.additional.Openness}}</span>&nbsp;Openness</td>
-	                                				<td><span class="badge badge-warning">{{mail.additional.Tentative}}</span>&nbsp;Tentative</td>
-	                                			</tr>
-	                                		</tbody>
-	                                	</table>
-	                                </div>                           
-	                            </div>      
-                            </div>
-                            <div class="col-md-4">
-                                <h3>Calls</h3>
-	                            <div class="panel panel-success panel-hidden-controls" ng-repeat="call in calls">
-	                                <div class="panel-heading">
-	                                    <h3 class="panel-title"><span class="fa fa-microphone text-success"></span>&nbsp;{{call.title}}</h3>
-	                                    <!-- <ul class="panel-controls">
-	                                        <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
-	                                    </ul> -->
-	                                </div>
-	                                <div class="panel-body">
-	                                	<table class='table table-condensed'>
-	                                		<tbody>
-	                                			<tr>
-	                                				<td><span class="badge badge-success">{{mail.additional.Agreeableness}}</span>&nbsp;Agreeableness</td>
-	                                				<td><span class="badge badge-info">{{mail.additional.Analytical}}</span>&nbsp;Analytical</td>
-	                                			</tr>
-	                                			<tr>
-	                                				<td><span class="badge badge-warning">{{mail.additional.Cheerfulness}}</span>&nbsp;Cheerfulness</td>
-	                                				<td><span class="badge badge-primary">{{mail.additional.Confident}}</span>&nbsp;Confident</td>
-	                                			</tr>
-	                                			<tr>
-	                                				<td><span class="badge badge-success">{{mail.additional.Conscientiousness}}</span>&nbsp;Conscientiousness</td>
-	                                				<td><span class="badge badge-danger">{{mail.additional.Negative}}</span>&nbsp;Negative</td>
-	                                			</tr>
-	                                			<tr>
-	                                				<td><span class="badge badge-info">{{mail.additional.Openness}}</span>&nbsp;Openness</td>
-	                                				<td><span class="badge badge-warning">{{mail.additional.Tentative}}</span>&nbsp;Tentative</td>
-	                                			</tr>
-	                                		</tbody>
-	                                	</table>
-	                                </div>                           
-	                            </div>      
-                            </div>
-                            <div class="col-md-4">
-                            <div class="widget widget-danger widget-carousel">
-                                <div class="owl-carousel" id="owl-example">
-                                    <div>                                    
-                                        <div class="widget-title">Email Analysis</div>                                                                        
-                                        <div class="widget-subtitle">Cummulative</div>
-                                        <div class="widget-subtitle"> Agreeableness : 10   
-                                        , Anger : 112
-                                        , Openness : 50   
-                                        , Analytical :10 </div>
-                                    </div>
-                                    <div>                                    
-                                        <div class="widget-title">Call Analysis</div>                                                                        
-                                        <div class="widget-subtitle">Cummulative</div>
-                                        <div class="widget-subtitle"> Agreeableness : 150   
-                                        , Anger : 10
-                                        , Openness : 60  
-                                        , Analytical :80 </div>
-                                    </div>
-                                    <div>                                    
-                                        <div class="widget-title">Email+Call</div>                                                                        
-                                        <div class="widget-subtitle">Cummulative</div>
-                                        <div class="widget-subtitle"> Agreeableness : 100   
-                                        , Anger : 12
-                                        , Openness : 75   
-                                        , Analytical :10 </div>
-                                    </div>
-                                </div>                            
-                                                        
-                            </div>
-							<p>
-                                <button type="button" class="btn btn-info btn-rounded" style="margin-bottom: 5px;">Analyse Emails</button><br />
-                                <button type="button" class="btn btn-default btn-rounded" style="margin-bottom: 5px;">Analyse Calls</button><br />
-                                <button type="button" class="btn btn-danger btn-rounded right" style="margin-bottom: 5px;">Emails+Calls</button><br />
-                            </p>
-                        </div>
-                        </div>                        
-                                                
+<div class="content-frame">     
+    <!-- START CONTENT FRAME TOP -->
+    <div class="content-frame-top">                        
+        <div class="page-title">                    
+            <h2><span class="fa fa-arrow-circle-o-right"></span> Products</h2>
+        </div>                                                
+        <div class="pull-right">
+            <button class="btn btn-default content-frame-left-toggle"><span class="fa fa-bars"></span></button>
+        </div>                                
+        <div class="pull-right" style="width: 100px; margin-right: 5px;">
+            <select class="form-control select">        
+                <option>Loan</option>
+                <option>Mutual Funds</option>
+                <option>Savings</option>
+                <option>All</option>       
+            </select>
+        </div>
+    </div>                    
+    <div class="content-frame-left">
+        <div class="form-group push-up-10">
+            <h4>Search in Products:</h4>
+            <div class="input-group">
+                <div class="input-group-addon"><span class="fa fa-search"></span></div>
+                <input type="text" class="form-control" placeholder="keyword..."/>
+            </div>
+        </div>
+        <div class="form-group">
+            <h4>Product List:</h4>
+            <div class="list-group border-bottom">
+                <a href="#" class="list-group-item active"><span class="fa fa-circle text-primary"></span> Home Loans</a>
+                <a href="#" class="list-group-item"><span class="fa fa-circle text-success"></span> Auto Loans</a>
+                <a href="#" class="list-group-item"><span class="fa fa-circle text-warning"></span> Payday Loans</a>
+                <a href="#" class="list-group-item"><span class="fa fa-circle text-danger"></span> Personal Loans </a>
+                <a href="#" class="list-group-item"><span class="fa fa-circle text-info"></span> Credit Card Loans</a>
+            </div>
+        </div>
+    </div>       
+    <!-- END CONTENT FRAME TOP -->
+    
+    <!-- START CONTENT FRAME BODY -->
+    <div class="content-frame-body">     
+        <div class="row push-up-10">
+            <div class="col-md-4">          
+               <h3>Emails</h3>
+                <div class="panel panel-success panel-hidden-controls" ng-repeat="mail in emails">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-envelope text-success"></span>&nbsp;{{mail.subject}}</h3>
+                        <!-- <ul class="panel-controls">
+                            <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                        </ul> -->
                     </div>
-                    <!-- END CONTENT FRAME BODY -->
-                    
+                    <div class="panel-body">
+                    	<table class='table table-condensed'>
+                    		<tbody>
+                    			<tr>
+                    				<td><span class="badge badge-success">{{mail.additional.Agreeableness}}</span>&nbsp;Agreeableness</td>
+                    				<td><span class="badge badge-info">{{mail.additional.Analytical}}</span>&nbsp;Analytical</td>
+                    			</tr>
+                    			<tr>
+                    				<td><span class="badge badge-warning">{{mail.additional.Cheerfulness}}</span>&nbsp;Cheerfulness</td>
+                    				<td><span class="badge badge-primary">{{mail.additional.Confident}}</span>&nbsp;Confident</td>
+                    			</tr>
+                    			<tr>
+                    				<td><span class="badge badge-success">{{mail.additional.Conscientiousness}}</span>&nbsp;Conscientiousness</td>
+                    				<td><span class="badge badge-danger">{{mail.additional.Negative}}</span>&nbsp;Negative</td>
+                    			</tr>
+                    			<tr>
+                    				<td><span class="badge badge-info">{{mail.additional.Openness}}</span>&nbsp;Openness</td>
+                    				<td><span class="badge badge-warning">{{mail.additional.Tentative}}</span>&nbsp;Tentative</td>
+                    			</tr>
+                    		</tbody>
+                    	</table>
+                    </div>                           
+                </div>      
+            </div>
+            <div class="col-md-4">
+                <h3>Calls</h3>
+                <div class="panel panel-success panel-hidden-controls" ng-repeat="call in calls">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="fa fa-microphone text-success"></span>&nbsp;{{call.title}}</h3>
+                        <!-- <ul class="panel-controls">
+                            <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+                        </ul> -->
+                    </div>
+                    <div class="panel-body">
+                    	<table class='table table-condensed'>
+                    		<tbody>
+                    			<tr>
+                    				<td><span class="badge badge-success">{{call.additional.Agreeableness}}</span>&nbsp;Agreeableness</td>
+                    				<td><span class="badge badge-info">{{call.additional.Analytical}}</span>&nbsp;Analytical</td>
+                    			</tr>
+                    			<tr>
+                    				<td><span class="badge badge-warning">{{call.additional.Cheerfulness}}</span>&nbsp;Cheerfulness</td>
+                    				<td><span class="badge badge-primary">{{call.additional.Confident}}</span>&nbsp;Confident</td>
+                    			</tr>
+                    			<tr>
+                    				<td><span class="badge badge-success">{{call.additional.Conscientiousness}}</span>&nbsp;Conscientiousness</td>
+                    				<td><span class="badge badge-danger">{{call.additional.Negative}}</span>&nbsp;Negative</td>
+                    			</tr>
+                    			<tr>
+                    				<td><span class="badge badge-info">{{call.additional.Openness}}</span>&nbsp;Openness</td>
+                    				<td><span class="badge badge-warning">{{call.additional.Tentative}}</span>&nbsp;Tentative</td>
+                    			</tr>
+                    		</tbody>
+                    	</table>
+                    </div>                           
+                </div>      
+            </div>
+            <div class="col-md-4">
+            <div class="widget widget-danger widget-carousel">
+                <div class="owl-carousel" id="owl-example">
+                    <div>                                    
+                        <div class="widget-title">Email Analysis</div>                                                                        
+                        <div class="widget-subtitle">Cummulative</div>
+                        <div class="widget-subtitle"> Agreeableness : 10   
+                        , Anger : 112
+                        , Openness : 50   
+                        , Analytical :10 </div>
+                    </div>
+                    <div>                                    
+                        <div class="widget-title">Call Analysis</div>                                                                        
+                        <div class="widget-subtitle">Cummulative</div>
+                        <div class="widget-subtitle"> Agreeableness : 150   
+                        , Anger : 10
+                        , Openness : 60  
+                        , Analytical :80 </div>
+                    </div>
+                    <div>                                    
+                        <div class="widget-title">Email+Call</div>                                                                        
+                        <div class="widget-subtitle">Cummulative</div>
+                        <div class="widget-subtitle"> Agreeableness : 100   
+                        , Anger : 12
+                        , Openness : 75   
+                        , Analytical :10 </div>
+                    </div>
                 </div>
-                <!-- END CONTENT FRAME -->
-                <script type="text/javascript" src="js/plugins/owl/owl.carousel.min.js"></script> 
+            </div>
+			<p>
+                <button type="button" class="btn btn-info btn-rounded"  data-toggle="modal" data-target="#productModal" style="margin-bottom: 5px;" ng-click="updateData('emails')">Analyse Emails</button><br />
+                <button type="button" class="btn btn-default btn-rounded"  data-toggle="modal" data-target="#productModal" style="margin-bottom: 5px;" ng-click="updateData('calls')">Analyse Calls</button><br />
+                <button type="button" class="btn btn-danger btn-rounded right"  data-toggle="modal" data-target="#productModal" style="margin-bottom: 5px;" ng-click="updateData('emails and calls')">Emails+Calls</button><br />
+            </p>
+        </div>
+        </div>
+    </div>
+    <!-- END CONTENT FRAME BODY -->
+</div>
+
+<div id="productModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Analyse Cumulative Records</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row" ng-show="loader">
+                    <div class="col-md-12 col-lg-12 col-sm-12 text-center">
+                         <img  style="margin-top: 100px;" src="img/loader.gif"/><br />
+                         <h3>{{loaderMessage}}</h3>
+                        </div>
+                </div>
+                <div class="row" ng-hide="loader">
+                    <div class="col-md-12 col-lg-12 col-sm-12 text-center">
+                        <h3>Cumulative Records Updated Successfully</h3><br />    
+                        <i style="color:green" class="fa fa-check-circle-o fa-lg"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END CONTENT FRAME -->
+<script type="text/javascript" src="js/plugins/owl/owl.carousel.min.js"></script> 
